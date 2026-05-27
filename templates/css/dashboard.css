@@ -1,0 +1,62 @@
+body {
+    background-color: #80abd2;
+}
+
+.wrapper {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.Different-options {
+    background-color: #b9d5dc;
+    margin-top: 50px;
+}
+
+.header-menu-title {
+    font-size: 7rem;
+    margin-top: 5rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.withdraw-deposit-btn {
+    padding: 0.7rem 1.7rem;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    background-color: #b2e44d;
+    font-size: 1.3rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-decoration: none;
+    border: 2px solid black;
+    color: black;
+}
+
+.transfer-button-btn {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.8rem 2.4rem;
+    border-radius: 0.5rem;
+    font-size: 1.3rem;
+    background-color: #b2e44d;
+    cursor: pointer;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-decoration: none;
+    color: black;
+    border: 2px solid black;
+}
+
+
+.logout-btn {
+    display: flex;
+    width: max-content;
+    margin-right: 0;
+    font-size: 1.2rem;
+    padding: 0.6rem 1rem;
+    background-color: #bed297;
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    font-weight: 700;
+}

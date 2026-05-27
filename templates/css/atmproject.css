@@ -1,0 +1,79 @@
+.wrapper {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+body {
+    background-color: #80abd2;
+}
+
+.hero-section-form {
+    border: 1px solid black;
+    padding: 3rem;
+    border-radius: 1.5rem;
+    margin-top: 3rem;
+    background-color: #0e62b1;
+}
+
+.error {
+    color: white;
+}
+
+.cardnumber-and-pin {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 7rem;
+    font-size: 7rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.cardnumber-title {
+    font-size: 1.7rem;
+    color: white;
+}
+
+.cardnumber-input {
+    padding: 0.7rem 6rem 0.7rem 0.7rem;
+    border-radius: 0.5rem;
+    border: none;
+}
+
+.pincode-title {
+    font-size: 1.7rem;
+    color: white;
+}
+
+.pincode-input {
+    padding: 0.7rem 6rem 0.7rem 0.7rem;
+    border-radius: 0.5rem;
+    border: none;
+}
+
+.login-button {
+    padding: 0.6rem 1.3rem;
+    border-radius: 0.5rem;
+    border: none;
+    font-size: 1.1rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 600;
+    color: white;
+    background-color: rgb(79, 79, 82);
+    cursor: pointer;
+}
+
+@media (max-width: 700px) {
+    .hero-section-form {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+    }    
+}

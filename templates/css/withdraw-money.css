@@ -1,0 +1,88 @@
+body {
+    background-color: #80abd2;
+}
+
+.wrapper {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.header-withdraw-title {
+    font-size: 3rem;
+    margin-top: 13rem;
+    color: white;
+}
+
+
+.form-withdraw-section {
+    margin-top: 2rem;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: blueviolet;
+}
+
+.widthdraw-amount-title {
+    display: inline-block;
+    font-size: 2rem;
+    padding-top: 2rem;
+    color: white;
+}
+
+.withdraw-amount-input {
+    margin-top: 2rem;
+    padding: 0.7rem 6rem 0.7rem 0.7rem;
+    border: none;
+    border-radius: 0.5rem;
+}
+
+.selectedAccounttoWithdraw {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    border-radius: 0.2rem;
+}
+
+.withdraw-money-btn {
+    margin: 1.3rem 2.5rem;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    background-color: bisque;
+    cursor: pointer;
+    border: none;
+}
+
+.different-back-logout-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.going-back-btn {
+    margin-left: 1rem;
+    display: inline-block;
+    padding: 0.5rem 1.2rem 0.5rem 1.2rem;
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: black;
+    background-color: #e0e0e0;
+    border-radius: 0.5rem;
+}
+
+.logout-btn {
+    display: block;
+    justify-self: flex-end;
+    margin: 1rem;
+    font-size: 1.2rem;
+    padding: 0.6rem 1rem 0.6rem 1rem;
+    border-radius: 0.5rem;
+    background-color: #bed297;
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    font-weight: 700;
+}

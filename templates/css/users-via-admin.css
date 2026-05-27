@@ -1,0 +1,90 @@
+
+
+
+body {
+    background-color: #80abd2;
+}
+
+
+.wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.table-of-users {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.users-header-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10rem;
+    font-size: 4rem;
+}
+
+.t-header-border {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+.changing-names {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    gap: 2rem;
+}
+
+.add-user,
+.edit-user,
+.delete-user {
+    padding: 0.6rem 1.3rem;
+    border-radius: 0.5rem;
+    display: inline-block;
+    cursor: pointer;
+    background-color: #cfdea9;
+    border: none;
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+}
+
+.logout-btn {
+    display: block;
+    justify-self: flex-end;
+    margin: 1rem;
+    font-size: 1.2rem;
+    padding: 0.6rem 1rem 0.6rem 1rem;
+    border-radius: 0.5rem;
+    background-color: #bed297;
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    font-weight: 700;
+}
+
+.different-back-logout-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.going-back-btn {
+    margin-left: 1rem;
+    display: inline-block;
+    padding: 0.5rem 1.2rem 0.5rem 1.2rem;
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: black;
+    background-color: #e0e0e0;
+    border-radius: 0.5rem;
+}

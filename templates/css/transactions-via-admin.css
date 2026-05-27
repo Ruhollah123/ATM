@@ -1,0 +1,117 @@
+
+
+
+body {
+    background-color: #80abd2;
+}
+
+.table-of-transactions {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.transactions-header-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    font-size: 4rem;
+}
+
+.wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.transaction-header-border {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+.different-back-logout-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.going-back-btn {
+    margin-left: 1rem;
+    display: inline-block;
+    padding: 0.5rem 1.2rem 0.5rem 1.2rem;
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: black;
+    background-color: #e0e0e0;
+    border-radius: 0.5rem;
+}
+
+.logout-btn {
+    display: block;
+    justify-self: flex-end;
+    margin: 1rem;
+    font-size: 1.2rem;
+    padding: 0.6rem 1rem 0.6rem 1rem;
+    border-radius: 0.5rem;
+    background-color: #bed297;
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    font-weight: 700;
+}
+
+.filtering-date-forms {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-above-select {
+    font-size: 2rem;
+    margin-top: 4rem;
+}
+
+.select-transfer-way {
+    padding: 0.5rem 1.3rem;
+    margin-top: 0.5rem;
+    cursor: pointer;
+}
+
+.label-from-to {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 1rem;
+}
+
+.date-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.two-labels {
+    font-size: 1.3rem;
+}
+
+.two-inputs {
+    padding: 0.5rem 1.3rem;
+    border-radius: 0.2rem;
+    border: none;
+}
+
+.filtering-btn {
+    margin: 1rem 0;
+    padding: 0.5rem 1.6rem;
+    font-size: 1.1rem;
+    border-radius: 0.3rem;
+    border: none;
+    background-color: #9fd282;
+    cursor: pointer;
+}

@@ -1,0 +1,94 @@
+body {
+    background-color: #80abd2;
+}
+
+.edited-form-sect {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 30%;
+    border-radius: 0.5rem;
+}
+
+.logout-btn {
+    display: block;
+    justify-self: flex-end;
+    margin: 1rem;
+    font-size: 1.2rem;
+    padding: 0.6rem 1rem 0.6rem 1rem;
+    border-radius: 0.5rem;
+    background-color: #bed297;
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    font-weight: 700;
+}
+
+.header-edituser-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+}
+
+.edit-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.name-input,
+.cardnumber-input,
+.role-input {
+    padding: 0.7rem 1.3rem;
+    border-radius: 0.5rem;
+    border: none;
+}
+
+.name-label {
+    margin-top: 1rem;
+    font-size: 2rem;
+}
+
+.cardnumber-label,
+.role-label {
+    font-size: 2rem;
+}
+
+.save-changes-btn {
+    padding: 0.7rem 1.3rem;
+    margin: 1rem 0 1rem 0;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    background-color: #e3e6e9;
+}
+
+.different-back-logout-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.going-back-btn {
+    margin-left: 1rem;
+    display: inline-block;
+    padding: 0.5rem 1.2rem 0.5rem 1.2rem;
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: black;
+    background-color: #e0e0e0;
+    border-radius: 0.5rem;
+}
+
+
+
+@media (max-width: 800px) {
+    .edited-form-sect {
+        width: 70%;
+    }
+}

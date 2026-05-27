@@ -1,0 +1,94 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #80abd2;
+}
+
+.wrapper {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header-deposit-title {
+    font-size: 3rem;
+    margin-top: 12rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.form-deposit-money {
+    margin-bottom: 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    background-color: blueviolet;
+}
+
+.selected-options {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    border-radius: 0.2rem;
+}
+
+.deposit-label-title {
+    padding-top: 2rem;
+    font-size: 2rem;
+    color: white;
+}
+.despoit-money-input {
+    padding: 0.7rem 6rem 0.7rem 0.7rem;
+    border-radius: 0.5rem;
+    border: none;
+}
+
+.btn-deposit-money {
+    margin: 1rem 0;
+    padding: 0.5rem 1.7rem;
+    font-size: 1.4rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #f4f4f4;
+    border: none;
+}
+
+.different-back-logout-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.going-back-btn {
+    margin-left: 1rem;
+    display: inline-block;
+    padding: 0.5rem 1.2rem 0.5rem 1.2rem;
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: black;
+    background-color: #e0e0e0;
+    border-radius: 0.5rem;
+}
+
+.logout-btn {
+    display: block;
+    justify-self: flex-end;
+    margin: 1rem;
+    font-size: 1.2rem;
+    padding: 0.6rem 1rem 0.6rem 1rem;
+    border-radius: 0.5rem;
+    background-color: #bed297;
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    font-weight: 700;
+}

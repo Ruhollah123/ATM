@@ -1,0 +1,164 @@
+body {
+    background-color: #80abd2;
+}
+
+.wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.transfer-money-title {
+    padding-top: 10rem;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.two-forms-transfer-money {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    margin-top: 5rem;
+}
+
+.transfering-money-section {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 0.5rem;
+    padding: 3.3rem 7.7rem 0.8rem 7.7rem;
+    background-color: rgb(130, 150, 198);
+}
+
+.second-transfering-money-section {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 0.5rem;
+    padding: 0 8.6rem 0.8rem 8.6rem;
+    background-color: rgb(130, 150, 198);
+}
+
+.from-account-transfer-title {
+    display: inline-block;
+    font-size: 2.3rem;
+}
+
+.from-account-input {
+    margin-top: 2rem;
+    padding: 0.7rem 6rem 0.7rem 0.7rem;
+    border: none;
+    border-radius: 0.5rem;
+}
+
+.to-account-transfer-title {
+    display: inline-block;
+    margin-top: 2rem;
+    font-size: 2.3rem;
+}
+
+.to-account-input {
+    margin-top: 2rem;
+    padding: 0.7rem 6rem 0.7rem 0.7rem;
+    border: none;
+    border-radius: 0.5rem;
+}
+
+.transfer-send-btn {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.5rem 1.8rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.selectedAccounttoWithdraw {
+    margin-top: 1rem;
+    padding: 0.7rem 2rem;
+    border-radius: 0.2rem;
+}
+
+.different-back-logout-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.going-back-btn {
+    margin-left: 1rem;
+    display: inline-block;
+    padding: 0.5rem 1.2rem 0.5rem 1.2rem;
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: black;
+    background-color: #e0e0e0;
+    border-radius: 0.5rem;
+}
+
+.logout-btn {
+    display: block;
+    justify-self: flex-end;
+    margin: 1rem;
+    font-size: 1.2rem;
+    padding: 0.6rem 1rem 0.6rem 1rem;
+    border-radius: 0.5rem;
+    background-color: #bed297;
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    font-weight: 700;
+}
+
+
+
+
+
+@media (max-width: 1200px) {
+    .two-forms-transfer-money {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+        width: 50%;
+    }
+}
+
+@media (max-width: 630px) {
+    .two-forms-transfer-money {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 50%;
+    }
+
+    .transfering-money-section,
+    .second-transfering-money-section {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        align-items: center;
+        padding: 3rem 5rem;
+    }
+}
+
+
+@media (min-width: 320px) and (max-width: 520px) {
+    .two-forms-transfer-money {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding-left: 2rem;
+    }
+
+    .transfering-money-section,
+    .second-transfering-money-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 60%;
+    }
+}
