@@ -5,6 +5,10 @@ require '../src/TransactionRepository.php';
 require '../src/AccountRepository.php';
 require '../src/auth.php';
 
+if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
+
 $transactionRepo = new TransactionRepository($pdo);
 $accountRepo = new AccountRepository($pdo);
 require_role('user');
@@ -24,6 +28,11 @@ if ($user) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+    if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+        die("CSRF token validation failed. Request denied.");
+    }
+
     $withdrawAmount = floatval($_POST['withdrawnAmount']);
     $accountId = $_POST['selectedAccounttoWithdraw'];
 
@@ -76,6 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
         <form action="" method="POST">
+            <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token']; ?>">
 
             <label for="withdraw-amount" class="widthdraw-amount-title">Withdraw Amount</label> <br>
             <input type="text" class="withdraw-amount-input" name="withdrawnAmount" id="widthdrawnAmount" placeholder="Withdraw Amount"> <br>

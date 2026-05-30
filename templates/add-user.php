@@ -7,10 +7,19 @@ require '../src/auth.php';
 
 require_role('admin');
 
+if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
+
 $accountRepo = new AccountRepository($pdo);
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+        die("CSRF token validation failed. Request denied.");
+    }
+
     $name = $_POST['name'];
     $card_number = $_POST['card_number'];
     $role = $_POST['role'];
@@ -44,6 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <section class="add-user-section">
         <form action="add-user.php" method="POST" class="add-user-form">
+            <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token']; ?>">
 
             <label for="name" class="name-label">Name</label>
             <input type="text" name="name" class="name-input" id="name" required>

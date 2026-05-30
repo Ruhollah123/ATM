@@ -8,7 +8,7 @@ class AccountRepository
         $this->pdo = $pdo;
     }
 
-    public function getCustomerByCardNumber(int $cardNumber)
+    public function getCustomerByCardNumber(string $cardNumber)
     {
         $stmtUser = $this->pdo->prepare("SELECT * FROM Customers WHERE card_number = ?");
         $stmtUser->execute([$cardNumber]);

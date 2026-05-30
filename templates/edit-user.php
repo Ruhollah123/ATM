@@ -6,6 +6,10 @@ require '../src/AccountRepository.php';
 require '../src/db.php';
 require '../src/auth.php';
 
+if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
+
 $accountRepo = new AccountRepository($pdo);
 
 require_role('admin');
@@ -18,6 +22,11 @@ if (!isset($_GET['id'])) {
 $id = $_GET['id'];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+        die("CSRF token validation failed. Request denied.");
+    }
+
     $name = $_POST['name'];
     $card_number = $_POST['card_number'];
     $role = $_POST['role'];
@@ -56,6 +65,7 @@ try {
     <h1 class="header-edituser-title">Edit User</h1>
     <section class="edited-form-sect">
         <form action="edit-user.php?id=<?php echo $id; ?>" method="POST" class="edit-form">
+            <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token']; ?>">
 
             <label for="name" class="name-label">Name</label>
             <input type="text" name="name" id="name" class="name-input" value="<?php echo htmlspecialchars($users['name']); ?>" required>

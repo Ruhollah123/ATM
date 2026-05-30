@@ -7,6 +7,10 @@ require '../src/AccountRepository.php';
 require '../src/auth.php';
 require_role('user');
 
+if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
+
 $cardNumber = $_SESSION['card_number'] ?? '';
 
 $accountRepo = new AccountRepository($pdo);
@@ -22,6 +26,11 @@ if ($user) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+    if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+        die("CSRF token validation failed. Request denied.");
+    }
+
     $depositedAmount = $_POST['deposited-amount'];
     $accountId = $_POST['Accounts'];
 
@@ -57,6 +66,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <section class="wrapper deposit-section">
 
         <form action="" method="POST" class="form-deposit-money">
+            <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token']; ?>">
+
             <label for="deposit" class="deposit-label-title">Deposit Amount</label> <br>
             <input type="text" name="deposited-amount" id="deposit" placeholder="Deposit Money" class="despoit-money-input">
 

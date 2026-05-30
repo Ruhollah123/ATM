@@ -7,6 +7,10 @@ require '../src/TransactionRepository.php';
 require '../src/AccountRepository.php';
 require '../src/auth.php';
 
+if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
+
 $transactionRepo = new TransactionRepository($pdo);
 $accountRepo = new AccountRepository($pdo);
 
@@ -31,8 +35,12 @@ if ($customer) {
 $allAccounts = $accountRepo->getAllBankAccounts();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $fromAccount = $_POST['fromAccount'];
 
+    if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+        die("CSRF token validation failed. Request denied.");
+    }
+
+    $fromAccount = $_POST['fromAccount'];
     $toAccount = $_POST['toAccount'];
 
     $amount = floatval($_POST['amount']);
@@ -82,15 +90,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <div class="different-back-logout-btn">
         <a href="../templates/dashboard.php" class="going-back-btn">Back</a>
-        <a href="?action=logout" class="logout-btn">Log out</a>
+        <a href="../src/logout.php" class="logout-btn">Log out</a>
     </div>
 
     <h1 class="wrapper transfer-money-title">Transfer Money</h1>
 
 
     <form action="" method="POST" class="wrapper two-forms-transfer-money">
-        <section class="transfering-money-section">
+        <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token']; ?>">
 
+        <section class="transfering-money-section">
             <label for="fromAccount" class="from-account-transfer-title">From Account</label> <br>
             <select name="fromAccount" id="fromAccount" class="selectedAccounttoWithdraw">
                 <option value="" disabled selected>Choose Account</option>

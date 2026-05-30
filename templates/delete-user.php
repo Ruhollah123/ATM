@@ -1,13 +1,14 @@
 <?php
+session_start();
 require '../src/db.php';
 require '../src/AccountRepository.php';
+require '../src/auth.php';
+
+require_role('admin');
 
 $accountRepo = new AccountRepository($pdo);
 
-if (isset($_GET['id'])) {
-    $id = $_GET['id'];
-}
-
+$id = isset($_GET['id']) ? $_GET['id'] : null;
 
 if ($id) {
     try {
